@@ -33,7 +33,7 @@ Install-Module -Name PSArchiveItemByDate
 cd $env:LOCALAPPDATA
 gh repo clone kumarstack55/PSArchiveItemByDate
 
-# Import the module.
+# or, import the module.
 Import-Module -Name $env:LOCALAPPDATA\PSArchiveItemByDate\PSArchiveItemByDate\PSArchiveItemByDate.psd1 -Force -Verbose
 ```
 
@@ -41,7 +41,9 @@ Import-Module -Name $env:LOCALAPPDATA\PSArchiveItemByDate\PSArchiveItemByDate\PS
 
 ```powershell
 # If you installed from PowerShell Gellery:
-cd "$env:ProgramFiles\WindowsPowerShell\Modules\PSArchiveItemByDate\1.x.x"
+$Version = [String](Get-InstalledModule -Name PSArchiveItemByDate).Version
+cd "$env:ProgramFiles\WindowsPowerShell\Modules\PSArchiveItemByDate\$Version"
+
 # or, if you installed from source:
 cd "$env:LOCALAPPDATA\PSArchiveItemByDate\PSArchiveItemByDate"
 
